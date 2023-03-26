@@ -1,0 +1,17 @@
+1. sudo apt-get install vino
+
+2. /usr/lib/vino/vino-server
+
+3. sudo nano /etc/sudoers.d/vinosrv.sh
+
+4. 
+#! /bin/bash
+/usr/lib/vino/vino-server
+
+5. sudo chmod +x /etc/sudoers.d/vinosrv.sh
+
+6. sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+
+7. add line : @/etc/sudoers.d/vinosrv.sh
+
+8. reboot now

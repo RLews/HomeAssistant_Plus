@@ -63,7 +63,7 @@ home-assistant
 
 1. install home-assistan in docker
 ```
-docker run -d \
+sudo docker run -d \
   --name homeassistant \
   --privileged \
   --restart=unless-stopped \

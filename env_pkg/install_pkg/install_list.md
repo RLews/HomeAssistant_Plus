@@ -4,7 +4,7 @@
  * @details: 
  * @author: Lews Hammond
  * @Date: 2023-04-08 08:05:58
- * @LastEditTime: 2023-04-08 08:32:44
+ * @LastEditTime: 2023-04-08 09:55:28
  * @LastEditors: Lews Hammond
 -->
 install list 
@@ -51,6 +51,12 @@ docker
 3. `sudo chmod +x /usr/local/bin/docker-compose`
 4. `sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose`
 5. `docker-compose version`
+6. 配置镜像加速 `sudo nano /etc/default/docker`
+```
+DOCKER_OPTS="--registry-mirror=https://docker.mirrors.ustc.edu.cn/"
+DOCKER_OPTS="--registry-mirror=https://hub-mirror.c.163.com/"
+DOCKER_OPTS="--registry-mirror=https://reg-mirror.qiniu.com"
+```
 
 home-assistant
 ---

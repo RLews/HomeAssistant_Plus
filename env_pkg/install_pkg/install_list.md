@@ -1,10 +1,10 @@
 <!--
- * @FilePath: \undefinedd:\git\HomeAssistant_Plus\env_pkg\install_pkg\install_list.md
+ * @FilePath: \HomeAssistant_Plus\env_pkg\install_pkg\install_list.md
  * @brief: 
  * @details: 
  * @author: Lews Hammond
  * @Date: 2023-04-08 08:05:58
- * @LastEditTime: 2023-04-08 09:55:28
+ * @LastEditTime: 2023-04-09 13:18:06
  * @LastEditors: Lews Hammond
 -->
 install list 
@@ -75,7 +75,7 @@ sudo docker run -d \
 
 2. install dependent package
 ```
-sudo apt-get install \
+sudo apt install \
 apparmor \
 jq \
 wget \
@@ -84,6 +84,7 @@ udisks2 \
 libglib2.0-bin \
 network-manager \
 dbus \
+lsb-release \
 systemd-journal-remote -y
 ```
 

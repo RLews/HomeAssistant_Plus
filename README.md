@@ -10,5 +10,5 @@
 # HomeAssistant_Plus
 Base on x86_64 device
 
-**Architecture**
+**Architecture**  
 ![Alt](Architecture.png)

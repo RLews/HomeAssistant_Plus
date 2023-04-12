@@ -7,7 +7,7 @@
  * @LastEditTime: 2023-04-09 13:18:06
  * @LastEditors: Lews Hammond
 -->
-install list 
+install list for bullseye
 ===
 
 vnc

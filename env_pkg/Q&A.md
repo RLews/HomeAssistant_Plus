@@ -4,7 +4,7 @@
  * @details: 
  * @author: Lews Hammond
  * @Date: 2023-04-29 11:39:28
- * @LastEditTime: 2023-05-04 20:43:54
+ * @LastEditTime: 2023-05-07 14:56:41
  * @LastEditors: Lews Hammond
 -->
 安装问题
@@ -53,3 +53,32 @@ sed -i "s#security.debian.org#mirrors.aliyun.com/debian-security#g" /etc/apt/sou
 echo "deb http://download.proxmox.com/debian/pve bullseye pve-no-subscription" >>  /etc/apt/sources.list
 wget https://mirrors.ustc.edu.cn/proxmox/debian/proxmox-release-bullseye.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg
 echo "deb https://mirrors.ustc.edu.cn/proxmox/debian/pve bullseye pve-no-subscription" > /etc/apt/sources.list.d/pve-no-subscription.list
+
+* 9. NTFS在linux挂载只读
+A: sudo ntfsfix /dev/xxx
+sudo umount /dev/xxx
+sudo mount -o rw /dev/xxx
+
+* 10. NextCloud部署
+A: 1.sudo docker run -d --name db_nextcloud \
+-p 3307:3306 \
+-e PUID=1000 \
+-e PGID=100 \
+-e MYSQL_ROOT_PASSWORD=000000 \
+-e MYSQL_DATABASE=nextcloud \
+-e MYSQL_USER=nextcloud \
+-e MYSQL_PASSWORD=000000 \
+--restart=unless-stopped \
+-v /srv/dev-disk-by-label-MYUN/data/db_nextcloud:/var/lib/mysql \
+mariadb
+2.sudo docker run \
+--name nextcloud -d -p 8888:80 \
+--link db_nextcloud:db_nextcloud \
+-e MYSQL_DATABASE=nextcloud \
+-e MYSQL_USER=nextcloud \
+-e MYSQL_PASSWORD=nextcloud \
+-e MYSQL_HOST=db_nextcloud \
+nextcloud:latest
+nextcloud link到数据库
+
+

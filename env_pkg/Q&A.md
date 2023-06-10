@@ -4,7 +4,7 @@
  * @details: 
  * @author: Lews Hammond
  * @Date: 2023-04-29 11:39:28
- * @LastEditTime: 2023-05-07 14:56:41
+ * @LastEditTime: 2023-05-10 07:22:33
  * @LastEditors: Lews Hammond
 -->
 安装问题
@@ -40,6 +40,7 @@ A: 详见https://www.jianshu.com/p/e02ae80a0b38
 * 6. PVE直通硬盘
 A: ls -l /dev/disk/by-id 查看设备描述符
 qm set VMID -sata1 /dev/disk/by-id/硬盘识别符
+删除直通：qm set VMID -delete sata1
 
 * 7. Ubuntu Servers安装qemu-guest-agant
 A: sudo apt install qemu-guest-agent 

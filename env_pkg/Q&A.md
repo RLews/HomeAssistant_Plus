@@ -4,7 +4,7 @@
  * @details: 
  * @author: Lews Hammond
  * @Date: 2023-04-29 11:39:28
- * @LastEditTime: 2023-05-10 07:22:33
+ * @LastEditTime: 2023-06-14 19:48:14
  * @LastEditors: Lews Hammond
 -->
 安装问题
@@ -61,25 +61,7 @@ sudo umount /dev/xxx
 sudo mount -o rw /dev/xxx
 
 * 10. NextCloud部署
-A: 1.sudo docker run -d --name db_nextcloud \
--p 3307:3306 \
--e PUID=1000 \
--e PGID=100 \
--e MYSQL_ROOT_PASSWORD=000000 \
--e MYSQL_DATABASE=nextcloud \
--e MYSQL_USER=nextcloud \
--e MYSQL_PASSWORD=000000 \
---restart=unless-stopped \
--v /srv/dev-disk-by-label-MYUN/data/db_nextcloud:/var/lib/mysql \
-mariadb
-2.sudo docker run \
---name nextcloud -d -p 8888:80 \
---link db_nextcloud:db_nextcloud \
--e MYSQL_DATABASE=nextcloud \
--e MYSQL_USER=nextcloud \
--e MYSQL_PASSWORD=nextcloud \
--e MYSQL_HOST=db_nextcloud \
-nextcloud:latest
-nextcloud link到数据库
+A: UbuntuServices安装宝塔平台、一键部署，安装nextcloud
+
 
 

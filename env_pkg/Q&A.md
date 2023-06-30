@@ -4,7 +4,7 @@
  * @details: 
  * @author: Lews Hammond
  * @Date: 2023-04-29 11:39:28
- * @LastEditTime: 2023-06-14 19:48:14
+ * @LastEditTime: 2023-06-22 10:05:50
  * @LastEditors: Lews Hammond
 -->
 安装问题
@@ -43,9 +43,10 @@ qm set VMID -sata1 /dev/disk/by-id/硬盘识别符
 删除直通：qm set VMID -delete sata1
 
 * 7. Ubuntu Servers安装qemu-guest-agant
-A: sudo apt install qemu-guest-agent 
-systemctl start qemu-guest-agent
-systemctl enable qemu-guest-agent
+A: sudo apt -y install qemu-guest-agent
+sudo systemctl enable qemu-guest-agent
+sudo systemctl start qemu-guest-agent
+sudo systemctl status qemu-guest-agent
 
 * 8. PVE 7.4.1 更新软件源
 A: cp /etc/apt/sources.list /etc/apt/sources.list.bak
